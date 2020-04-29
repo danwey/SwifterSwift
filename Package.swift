@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SwifterSwift",
     platforms: [
-        .iOS(.v10),
+        .iOS(.v9),
         .tvOS(.v9),
         .watchOS(.v2),
         .macOS(.v10_10)
