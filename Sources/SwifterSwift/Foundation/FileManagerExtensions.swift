@@ -69,11 +69,8 @@ public extension FileManager {
     func createTemporaryDirectory() throws -> URL {
         #if !os(Linux)
         let temporaryDirectoryURL: URL
-        if #available(OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            temporaryDirectoryURL = temporaryDirectory
-        } else {
-            temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-        }
+        temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+
         return try url(for: .itemReplacementDirectory,
                        in: .userDomainMask,
                        appropriateFor: temporaryDirectoryURL,
